@@ -5,92 +5,120 @@ import java.math.BigDecimal;
 public class App {
 	public static void main(String[] args) {
 
-		// Crear un objeto Manzana sin especificar ninguna propiedad de la Manzana
-		// Se utiliza el constructor sin parametros
+		//El array es un identificador que hace referencia a una zona de memoria,
+		// a diferncia de una variable que hace referencia a una sola ubicacion
+		// en la memoria, y que puede contener elementos de un mismo tipo de datos
+		// A los elementos del arrays se pueden acceder utilizando un indice numerico,
+		// entero, entre corchetes
+		
+		/*¿Como se declara un array actualmente?*/
+		// por ejemplo, un array de String
+		// El identificador nombre es un array donde cada elememto del array
+		// es de tipo String
+		
+		//¿Que ventajas nos ofrece?
+		// Que en lugar de crerauna variable por cada elemento ahora solo tenemos
+		// un nombre para todo el conjunto de los elementos y es mucho mas escalable 
+		// porque podremos tratar 10, 20, o un millon de elementos de la misma forma 
+		
+		// Si no existieran los arrays, entonces tendriamos que crear una variable por cada elemento, 
+		//lo cual no es nada practicoe
+		
+		String nombre1;
+		String nombre2;
+		
+		String nombren; // n significa un numero cualquiera, es decir, n puede ser 10, 20, o un millon , 
+		//pero no es una variable, es solo una forma de representar que hay muchos
+		//elementos
+		
+		String[] nombres = {
+		"Yodalis",
+		"Jakelin",
+		"Yoselin"
+		
+		};
+		System.out.println("Arrays original de nombres: ");
+		System.out.println(nombres[0]); // Yodalis
+		System.out.println(nombres[1]); // Jakelin
+		System.out.println(nombres[2]); // Yoselin
+		
+		System.out.println("El arrays de nombres tiene" +nombres.length + "elementos");
+		// Tamaño fijo implica que no se pueden agregar mas elementos al array, 
+		// pero si se pueden modificar los elementos existentes
+		
+		// nombres[3] = "Marisol";
 
-		Manzana manzana1 = new Manzana();
+		nombres[2] = "Marisol";
 
-		/*
-		 * ¿Como imprimir en la consola el objeto referenciado por la variable manzana1
-		 */
-		System.out.println("------- Imprimiendo manzana1 ------- ");
-		System.out.println(manzana1.toString());
+		System.out.println("Array de nombres modificado");
 
-		/* Utilizando Lombok no necesitamos tener todos los constructores defiunidos,
-		 * solamente el constructor sin parametros o por dfecxto y el constructor
-		 * que recibe todos los campos de la clase
-		 * Utilizando EL PATRON BUILDER DE LOMBOK, es posible construir cualquier
-		 * objeton aunque no tengas su constructor explicitamente, y tampoco estariamos
-		 * obligados a suministrar los campos o propiedades del objeto en un orden
-		 * determinado*/
-		
-		//El Patron Builder NO fue inventado por lombok, pero lo ha mejorado bastante;
-		
-		//El Patron Builder es patron factoria, es decir, creacional,
-		// que permite creainstanciar objetos sin tener explicitamente su
-		// su constructor
-		
-		//Manzana manzana 2 = new Manzana("Golden");
-		
-		Manzana manzana2 = Manzana.builder()
-				.variedad("Golden")
-				.build();
-		
-		
-		System.out.println("------- Imprimiendo manzana2 ------- ");
-		System.out.println(manzana2);
+		System.out.println(nombres[2]);
 
-		/*
-		 * ¿ Como comparar dos objetos Manzana para saber si son iguales o no?
-		 * 
-		 * Vamos a crear dos objetos Manzanas que sean de la misma vcariedad y precio*/
 		
-		//Manzana manzana3 = new Manzana("reineta, new BigDecimal(2.0));
 		
-		Manzana manzana3 = Manzana.builder()
-				.variedad("reineta")
-				.precio(new BigDecimal(2.0))
-				.build();
+		int[] arrayNumerosEnteros = {1, 2, 3, 4, 5};
 		
-		////Manzana manzana4 = new Manzana("reineta, new Bigdecimal(2.0));
-		Manzana manzana4 = Manzana.builder()
-				.variedad("reineta")
-				.precio(new BigDecimal(2.0))
-				.build();
-		
-
-		int x = 5;
-		int y = 5;
-
-		// Si quiero comprobar si las variables x e y son iguales, podemos utilizar una
-		// sentencia de Java
-		// que la tienen todos los lenguajes de programacion , denominada sentencia
-		// condicional if - else
-		// que evalua una condicion entre parentesis, y que si se cumple se ejecuta el
-		// grupo de sentencias
-		// que aparecen en el bloque encerrado entre las llaves de apartura y cierre, y
-		// si no se cumple la condicion
-		// se podra ejecutar la o las sentencias que estan en siguiente bloque.
-
- 
-		if (manzana3==manzana4) 
-			
-		{
-			System.out.println("Los objetos manzana 3 y manzana 4 apuntan a la misma direccion");
-		} else {
-			System.out.println("Los objetos manzana 3 y manzana 4 apuntan a direcciones distintas");
-			
-		}
-		/*
-		 * Para saber si el contenido de dos objetos es el mismo se utiliza el metodo
-		 * equal, porque el operador == lo que comprueba en el caso de objetos es si
-		 * dichos objetos estan en la misma ubicacion de la memoria
-		 */
-
-		if (manzana3.equals(manzana4)) {
-			System.out.println("Las manzanas 3 y 4 son iguales");
-		} else {
-			System.out.println("Las manzanas 3 y 4 no son iguales");
-		}
 	}
-}
+	
+	//Array de 3 manzanas
+	
+//	Manzana [] manzanas = { new Manzana("roja", "dulce", "red delicious", 10, 0.5, new BigDecimal(valueOf(0.5))),
+//			new Manzana("verde", "acida", "Granny Smith", 12, 0.6, new BigDecimal(valueOf(0.6))),
+//			new Manzana("amarilla", "dulce", "Golden Delicious", 8, 0.4, new BigDecimal(valueOf(0.4)))	
+//			
+			
+			Manzana [] manzanas = {
+					Manzana.builder()
+					.color("roja")
+					.sabor("dulce")
+					.variedad("red delicious")
+					.size(10)
+					.peso(0.5)
+					.precio(new BigDecimal(0.5))
+					.build(),
+					
+					Manzana.builder()
+					.color("verde")
+					.sabor("acida")
+					.variedad("Granny Smith")
+					.size(12)
+					.peso(0.6)
+					.precio(new BigDecimal(0.6))
+					.build(),
+					
+					Manzana.builder()
+					.color("amarilla")
+					.sabor("dulce")
+					.variedad("Golden Delicious")
+					.size(8)
+					.peso(0.4)
+					.precio(new BigDecimal(0.4))
+					.build()
+			};
+			
+			// Hata el momento los arrays  que hemos creado son de tamaño fijo, es decir, 
+			//que no se pueden modificar una vez que se han creado
+			
+			/* Declarar arrays que sean modificables, es decir, que se le puedan
+			* agregar o eliminar elementos o modificar los elementos existentes */
+
+{
+	{
+			String[] nombre2  = new String[3];
+			
+			// 	El array de nombres2 tiene 3 elementos, pero todos los elementos son null
+			// porque no se le ha asignado un valor aun. Con la sentencia anterior
+			// se ha reservado espacio en la memoria para 3 elkementos de tipo String.
+			// No sera posible pasarse de la cantidad de elementos reservados para el array
+			// que en el caso anterior es de 3.String con tamaño fijo de 3 elementos 
+			
+			//Agregando elementos al array de nombres2
+			nombre2[0] = "Yodalis";
+			nombre2[1] = "Jakelin";
+			nombre2[2] = "Yoselin";
+	}
+}	}
+
+
+			
+			
