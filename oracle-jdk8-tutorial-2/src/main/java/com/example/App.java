@@ -5,47 +5,45 @@ import java.math.BigDecimal;
 public class App {
 	public static void main(String[] args) {
 
-		//El array es un identificador que hace referencia a una zona de memoria,
+		// El array es un identificador que hace referencia a una zona de memoria,
 		// a diferncia de una variable que hace referencia a una sola ubicacion
 		// en la memoria, y que puede contener elementos de un mismo tipo de datos
 		// A los elementos del arrays se pueden acceder utilizando un indice numerico,
 		// entero, entre corchetes
-		
-		/*¿Como se declara un array actualmente?*/
+
+		/* ¿Como se declara un array actualmente? */
 		// por ejemplo, un array de String
 		// El identificador nombre es un array donde cada elememto del array
 		// es de tipo String
-		
-		//¿Que ventajas nos ofrece?
+
+		// ¿Que ventajas nos ofrece?
 		// Que en lugar de crerauna variable por cada elemento ahora solo tenemos
-		// un nombre para todo el conjunto de los elementos y es mucho mas escalable 
-		// porque podremos tratar 10, 20, o un millon de elementos de la misma forma 
-		
-		// Si no existieran los arrays, entonces tendriamos que crear una variable por cada elemento, 
-		//lo cual no es nada practicoe
-		
+		// un nombre para todo el conjunto de los elementos y es mucho mas escalable
+		// porque podremos tratar 10, 20, o un millon de elementos de la misma forma
+
+		// Si no existieran los arrays, entonces tendriamos que crear una variable por
+		// cada elemento,
+		// lo cual no es nada practicoe
+
 		String nombre1;
 		String nombre2;
-		
-		String nombren; // n significa un numero cualquiera, es decir, n puede ser 10, 20, o un millon , 
-		//pero no es una variable, es solo una forma de representar que hay muchos
-		//elementos
-		
-		String[] nombres = {
-		"Yodalis",
-		"Jakelin",
-		"Yoselin"
-		
+
+		String nombren; // n significa un numero cualquiera, es decir, n puede ser 10, 20, o un millon ,
+		// pero no es una variable, es solo una forma de representar que hay muchos
+		// elementos
+
+		String[] nombres = { "Yodalis", "Jakelin", "Yoselin"
+
 		};
 		System.out.println("Arrays original de nombres: ");
 		System.out.println(nombres[0]); // Yodalis
 		System.out.println(nombres[1]); // Jakelin
 		System.out.println(nombres[2]); // Yoselin
-		
-		System.out.println("El arrays de nombres tiene" +nombres.length + "elementos");
-		// Tamaño fijo implica que no se pueden agregar mas elementos al array, 
+
+		System.out.println("El arrays de nombres tiene" + nombres.length + "elementos");
+		// Tamaño fijo implica que no se pueden agregar mas elementos al array,
 		// pero si se pueden modificar los elementos existentes
-		
+
 		// nombres[3] = "Marisol";
 
 		nombres[2] = "Marisol";
@@ -54,71 +52,143 @@ public class App {
 
 		System.out.println(nombres[2]);
 
-		
-		
-		int[] arrayNumerosEnteros = {1, 2, 3, 4, 5};
-		
-	}
-	
-	//Array de 3 manzanas
-	
+		int[] arrayNumerosEnteros = { 1, 2, 3, 4, 5 };
+
+		// Array de 3 manzanas
+
 //	Manzana [] manzanas = { new Manzana("roja", "dulce", "red delicious", 10, 0.5, new BigDecimal(valueOf(0.5))),
 //			new Manzana("verde", "acida", "Granny Smith", 12, 0.6, new BigDecimal(valueOf(0.6))),
 //			new Manzana("amarilla", "dulce", "Golden Delicious", 8, 0.4, new BigDecimal(valueOf(0.4)))	
 //			
-			
-			Manzana [] manzanas = {
-					Manzana.builder()
-					.color("roja")
-					.sabor("dulce")
-					.variedad("red delicious")
-					.size(10)
-					.peso(0.5)
-					.precio(new BigDecimal(0.5))
-					.build(),
-					
-					Manzana.builder()
-					.color("verde")
-					.sabor("acida")
-					.variedad("Granny Smith")
-					.size(12)
-					.peso(0.6)
-					.precio(new BigDecimal(0.6))
-					.build(),
-					
-					Manzana.builder()
-					.color("amarilla")
-					.sabor("dulce")
-					.variedad("Golden Delicious")
-					.size(8)
-					.peso(0.4)
-					.precio(new BigDecimal(0.4))
-					.build()
-			};
-			
-			// Hata el momento los arrays  que hemos creado son de tamaño fijo, es decir, 
-			//que no se pueden modificar una vez que se han creado
-			
-			/* Declarar arrays que sean modificables, es decir, que se le puedan
-			* agregar o eliminar elementos o modificar los elementos existentes */
 
-{
-	{
-			String[] nombre2  = new String[3];
-			
-			// 	El array de nombres2 tiene 3 elementos, pero todos los elementos son null
-			// porque no se le ha asignado un valor aun. Con la sentencia anterior
-			// se ha reservado espacio en la memoria para 3 elkementos de tipo String.
-			// No sera posible pasarse de la cantidad de elementos reservados para el array
-			// que en el caso anterior es de 3.String con tamaño fijo de 3 elementos 
-			
-			//Agregando elementos al array de nombres2
-			nombre2[0] = "Yodalis";
-			nombre2[1] = "Jakelin";
-			nombre2[2] = "Yoselin";
+		Manzana[] manzanas = {
+				Manzana.builder().color("roja").sabor("dulce").variedad("red delicious").size(10).peso(0.5)
+						.precio(new BigDecimal(0.5)).build(),
+
+				Manzana.builder().color("verde").sabor("acida").variedad("Granny Smith").size(12).peso(0.6)
+						.precio(new BigDecimal(0.6)).build(),
+
+				Manzana.builder().color("amarilla").sabor("dulce").variedad("Golden Delicious").size(8).peso(0.4)
+						.precio(new BigDecimal(0.4)).build() };
+
+		// Hata el momento los arrays que hemos creado son de tamaño fijo, es decir,
+		// que no se pueden modificar una vez que se han creado
+
+		/*
+		 * Declarar arrays que sean modificables, es decir, que se le puedan agregar o
+		 * eliminar elementos o modificar los elementos existentes
+		 */
+
+		String[] nombres2 = new String[3];
+
+		// El array de nombres2 tiene 3 elementos, pero todos los elementos son null
+		// porque no se le ha asignado un valor aun. Con la sentencia anterior
+		// se ha reservado espacio en la memoria para 3 elkementos de tipo String.
+		// No sera posible pasarse de la cantidad de elementos reservados para el array
+		// que en el caso anterior es de 3.String con tamaño fijo de 3 elementos
+
+		// Agregando elementos al array de nombres2
+		nombres2[0] = "Yodalis";
+		nombres2[1] = "Jakelin";
+		nombres2[2] = "Yoselin";
+
+		/*
+		 * SENTENCIA DE CONTROL DE FLUJO. En general permiten modificar el flujo de
+		 * ejecucion de un programa en dependencia del cumplimiento de una o varias
+		 * condiciones, aqui estarian las sent6encias condicionales if - else y switch -
+		 * case y switch - expression
+		 * 
+		 * Y por otra parte, pero como parte tambien de las sentencias de control flujo
+		 * estarian las que permiten ejecutar en bucle un conjunto de sentencias entre
+		 * las que estarian
+		 * 
+		 * 1- sentencia for clasica 2- sentencia for mejorada 3- sentencia while 4-
+		 * sentencia do - while
+		 * 
+		 * Por ultimo las sentencias break y continue
+		 */
+		/*
+		 * La sentencia for clasica, se utiliza cuando se conoce a priori la cantidad de
+		 * veces que se van ejecutar un conjunto de instrucciones.
+		 * 
+		 * Tambien se puede utilizar para recorrer los elementos de un array
+		 */
+
+		/*
+		 * Para mostrar en la consola los elementos de un array, por ejemplo el array de
+		 * nombres
+		 */
+
+		/* Si intentamos mostrar por la consola los elementos del array nombres */
+
+		System.out.println("Recorriendo el array" + "nombres con una sentencia for clasica");
+		System.out.println("intentando imprimir los elementos del array nombres");
+		System.out.println(nombres);
+
+		/*
+		 * La sentencia anterior solamente mostro por la consola la direccion de memoria
+		 * de la zona donde estan almacenados los elementos del array pero los elementos
+		 * como tal no los ha mostrado.
+		 * 
+		 * Para mostrar los elementos del array se necesita una sentencia de control de
+		 * flujo, que en bucle recorra todos los elementos del array de nombres y podria
+		 * ser la sentencia for clasica, en primer lugar, y en segundo lugar la
+		 * sentencia for mejorada
+		 */
+
+		// Primero: Sentencia for clasica
+
+		System.out.println("Recorriendo/Iterando los elementos del array de nombres" + "con una sentencia for clasica");
+
+		int totalNombres = nombres.length;
+
+		for (int i = 0; i <= nombres.length - i; i = i + 1) {
+			System.out.println(nombres[i]);
+
+			System.out.println("La sentencia for ha concluido");
+		}
+			/* OPERADOR DE AUTO INCREMENTO (++) Y DE AUTO DECREMENTO (--) */
+			int ii = 0;
+			++ii;
+			ii++;
+			/*
+			 * Para comprobar la diferencia entre las dos instrucciones anteriores se puede
+			 * utilizar una herramiento de linea de comandos llamado jshell y comprobaremos
+			 * que el operador de autoincremento cuando esta solo, es lo mismo que este al
+			 * principio que al final, que no es igual a cuando esta en una expresion
+			 */
+
+			/*
+			 * Ejemplo de creacion de un array de numeros fraccionarios, tipo double, que
+			 * tienen parte entera y parte fraccionaria. Los valores del array se tienen que
+			 * generar de forma aleatoria y con numeros entre 0 100,
+			 * 
+			 * Sabemos que debemos de utilizar el metodo random() de la biblioteca Math,
+			 * pero no sabemos como hacer que genere numeros aleatorios entre 0 y 100.
+			 * 
+			 * Por lo tanto vamos a utilizar la herramienta jshell para averiguar como
+			 */
+ System.out.println("Array de numeros de tipo double, generado de forma aleatoria");
+ 		double[] arrayDeDoubles = new double[20];
+ 		
+ 		System.out.println("Array original, con los valores por defecto");
+ 		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
+ 			System.out.println(arrayDeDoubles[i]);
+ 		}
+ 		//Rellenando el array con valores generados aleatoriamenre
+ 		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
+ 			arrayDeDoubles[i] = Math.random() * 100 - 1;
+ 		}
+ 		//Mostrando el array resultante
+ 		for (int i = 0; i <= arrayDeDoubles.length -1; i++) {
+ 			System.out.println(arrayDeDoubles[i]);
+ 		}
+ 			/*Ejercicio ·1. Modificarel ejemplo anterior para que 
+ 			 * array sea de100 numeros enteros generados aleatoriamente
+ 			 * 
+ 			 * Sugerencia: Hacer un commit previamente a ponerse con la solucion
+ 			 * del ejercicio, para que puedas modificar el codigo sin que se
+ 			 * pierda el codigo del ejemplo original */
+		}
 	}
-}	}
 
-
-			
-			
