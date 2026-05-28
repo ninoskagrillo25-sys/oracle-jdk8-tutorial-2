@@ -189,6 +189,77 @@ public class App {
  			 * Sugerencia: Hacer un commit previamente a ponerse con la solucion
  			 * del ejercicio, para que puedas modificar el codigo sin que se
  			 * pierda el codigo del ejemplo original */
+		
+	System.out.println(".........Solucion al Ejercicio 1. ........");
+	long[] numerosEnteros = new long[100];
+	
+	System.out.println("Array original, de numeros enteros:");
+	
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+			System.out.println(numerosEnteros[i]);
+		}
+		
+		System.out.println("Array resultantes, generado de forma aleatoria");
+		
+	for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+		numerosEnteros[i] = Math.round(Math.random() * 100 - 1);
+		}
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+		
+			System.out.println(numerosEnteros[i]);
+			}
+		/* SENTENCIA FOR MEJORADA. 
+		* 
+		* Se recomienda su uso siempre que no haya que trabajar con el indice 
+		* o los indices de un array */
+
+		System.out.println("----- SENTENCIA FOR MEJORADA (Mal llamada forEach) ---------------");
+		for (long numeroEntero : numerosEnteros) {
+			System.out.println(numeroEntero);
+			}
+		/*Ejercicio ·2.
+		 * Recorrer el array numerosEnteros y solamente mostrar aquellos elementos que son
+		 * de indice par
+		 * 
+		 * ¿Cuando un valor es par?
+		 * Cuando el resultado del residuo de la division por 2 es igual a cero.
+		 * El residuo de la division la da el operador %, o tambien mod en una calculadora*/
+		
+		//Solucion utilizando la sentencia for clasica
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+			if (i % 2 == 0) {
+				System.out.println("indice: "+ i +",numero: " + numerosEnteros[i]);
+			}
+		}
+		/*Ejercicio ·3. 
+		 * Recorrer el array numerosEnteros y solamente mostrar aquellos elementos impares*/
+		
+		System.out.println("----- Ejercicio 3 -----");
+		
+		for (long n : numerosEnteros) {
+			
+			if (n % 2 != 0) {
+				System.out.println(n);
+			}
+		}
+		/*Ejercicio 4, recorrer el array de numeros enteros y mostrar solamente los que sean de indice impar*/
+		System.out.println("----- Ejercicio 4 -----");
+		
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+			
+			if (i % 2 != 0) {
+				System.out.println("indice:" + i + ", numero " + numerosEnteros[i]);
+			}
+		}
 		}
 	}
+			  
+		
+			
+		
+		
+		
+
+
+	
 
