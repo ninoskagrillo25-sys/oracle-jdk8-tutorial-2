@@ -56,20 +56,35 @@ public class App {
 
 		// Array de 3 manzanas
 
-//	Manzana [] manzanas = { new Manzana("roja", "dulce", "red delicious", 10, 0.5, new BigDecimal(valueOf(0.5))),
-//			new Manzana("verde", "acida", "Granny Smith", 12, 0.6, new BigDecimal(valueOf(0.6))),
-//			new Manzana("amarilla", "dulce", "Golden Delicious", 8, 0.4, new BigDecimal(valueOf(0.4)))	
-//			
+		// Manzana [] manzanas = { new Manzana("roja", "dulce", "red delicious", 10,
+		// 0.5, new BigDecimal(valueOf(0.5))),
+		// new Manzana("verde", "acida", "Granny Smith", 12, 0.6, new
+		// BigDecimal(valueOf(0.6))),
+		// new Manzana("amarilla", "dulce", "Golden Delicious", 8, 0.4, new
+		// BigDecimal(valueOf(0.4)))
 
 		Manzana[] manzanas = {
+
 				Manzana.builder().color("roja").sabor("dulce").variedad("red delicious").size(10).peso(0.5)
 						.precio(new BigDecimal(0.5)).build(),
 
-				Manzana.builder().color("verde").sabor("acida").variedad("Granny Smith").size(12).peso(0.6)
+				Manzana.builder().color("verde").sabor("dulce").variedad("Granny Smith").size(6).peso(0.6)
 						.precio(new BigDecimal(0.6)).build(),
 
 				Manzana.builder().color("amarilla").sabor("dulce").variedad("Golden Delicious").size(8).peso(0.4)
-						.precio(new BigDecimal(0.4)).build() };
+						.precio(new BigDecimal(0.4)).build(),
+
+				Manzana.builder().color("Roja").sabor("Dulce").variedad("Red Delicious").size(7.5).peso(0.2)
+						.precio(new BigDecimal("0.50")).build(),
+
+				Manzana.builder().color("Verde").sabor("Acida").variedad("Granny Smith").size(6.0).peso(0.25)
+						.precio(new BigDecimal("0.60")).build(),
+
+				Manzana.builder().color("Amarilla").sabor("Dulce").variedad("Golden Delicious").size(8.0).peso(0.3)
+						.precio(new BigDecimal("0.55")).build(),
+
+				Manzana.builder().color("Roja").sabor("Dulce").variedad("Red Delicious").size(7.5).peso(0.2)
+						.precio(new BigDecimal("0.50")).build() };
 
 		// Hata el momento los arrays que hemos creado son de tamaño fijo, es decir,
 		// que no se pueden modificar una vez que se han creado
@@ -147,119 +162,271 @@ public class App {
 
 			System.out.println("La sentencia for ha concluido");
 		}
-			/* OPERADOR DE AUTO INCREMENTO (++) Y DE AUTO DECREMENTO (--) */
-			int ii = 0;
-			++ii;
-			ii++;
-			/*
-			 * Para comprobar la diferencia entre las dos instrucciones anteriores se puede
-			 * utilizar una herramiento de linea de comandos llamado jshell y comprobaremos
-			 * que el operador de autoincremento cuando esta solo, es lo mismo que este al
-			 * principio que al final, que no es igual a cuando esta en una expresion
-			 */
+		/* OPERADOR DE AUTO INCREMENTO (++) Y DE AUTO DECREMENTO (--) */
+		int ii = 0;
+		++ii;
+		ii++;
+		/*
+		 * Para comprobar la diferencia entre las dos instrucciones anteriores se puede
+		 * utilizar una herramiento de linea de comandos llamado jshell y comprobaremos
+		 * que el operador de autoincremento cuando esta solo, es lo mismo que este al
+		 * principio que al final, que no es igual a cuando esta en una expresion
+		 */
 
-			/*
-			 * Ejemplo de creacion de un array de numeros fraccionarios, tipo double, que
-			 * tienen parte entera y parte fraccionaria. Los valores del array se tienen que
-			 * generar de forma aleatoria y con numeros entre 0 100,
-			 * 
-			 * Sabemos que debemos de utilizar el metodo random() de la biblioteca Math,
-			 * pero no sabemos como hacer que genere numeros aleatorios entre 0 y 100.
-			 * 
-			 * Por lo tanto vamos a utilizar la herramienta jshell para averiguar como
-			 */
- System.out.println("Array de numeros de tipo double, generado de forma aleatoria");
- 		double[] arrayDeDoubles = new double[20];
- 		
- 		System.out.println("Array original, con los valores por defecto");
- 		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
- 			System.out.println(arrayDeDoubles[i]);
- 		}
- 		//Rellenando el array con valores generados aleatoriamenre
- 		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
- 			arrayDeDoubles[i] = Math.random() * 100 - 1;
- 		}
- 		//Mostrando el array resultante
- 		for (int i = 0; i <= arrayDeDoubles.length -1; i++) {
- 			System.out.println(arrayDeDoubles[i]);
- 		}
- 			/*Ejercicio ·1. Modificarel ejemplo anterior para que 
- 			 * array sea de100 numeros enteros generados aleatoriamente
- 			 * 
- 			 * Sugerencia: Hacer un commit previamente a ponerse con la solucion
- 			 * del ejercicio, para que puedas modificar el codigo sin que se
- 			 * pierda el codigo del ejemplo original */
-		
-	System.out.println(".........Solucion al Ejercicio 1. ........");
-	long[] numerosEnteros = new long[100];
-	
-	System.out.println("Array original, de numeros enteros:");
-	
+		/*
+		 * Ejemplo de creacion de un array de numeros fraccionarios, tipo double, que
+		 * tienen parte entera y parte fraccionaria. Los valores del array se tienen que
+		 * generar de forma aleatoria y con numeros entre 0 100,
+		 * 
+		 * Sabemos que debemos de utilizar el metodo random() de la biblioteca Math,
+		 * pero no sabemos como hacer que genere numeros aleatorios entre 0 y 100.
+		 * 
+		 * Por lo tanto vamos a utilizar la herramienta jshell para averiguar como
+		 */
+		System.out.println("Array de numeros de tipo double, generado de forma aleatoria");
+		double[] arrayDeDoubles = new double[20];
+
+		System.out.println("Array original, con los valores por defecto");
+		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
+			System.out.println(arrayDeDoubles[i]);
+		}
+		// Rellenando el array con valores generados aleatoriamenre
+		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
+			arrayDeDoubles[i] = Math.random() * 100 - 1;
+		}
+		// Mostrando el array resultante
+		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
+			System.out.println(arrayDeDoubles[i]);
+		}
+		/*
+		 * Ejercicio ·1. Modificarel ejemplo anterior para que array sea de100 numeros
+		 * enteros generados aleatoriamente
+		 * 
+		 * Sugerencia: Hacer un commit previamente a ponerse con la solucion del
+		 * ejercicio, para que puedas modificar el codigo sin que se pierda el codigo
+		 * del ejemplo original
+		 */
+
+		System.out.println(".........Solucion al Ejercicio 1. ........");
+		long[] numerosEnteros = new long[100];
+
+		System.out.println("Array original, de numeros enteros:");
+
 		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
 			System.out.println(numerosEnteros[i]);
 		}
-		
+
 		System.out.println("Array resultantes, generado de forma aleatoria");
-		
-	for (int i = 0; i <= numerosEnteros.length - 1; i++) {
-		numerosEnteros[i] = Math.round(Math.random() * 100 - 1);
+
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+			numerosEnteros[i] = Math.round(Math.random() * 100 - 1);
 		}
 		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
-		
+
 			System.out.println(numerosEnteros[i]);
-			}
-		/* SENTENCIA FOR MEJORADA. 
-		* 
-		* Se recomienda su uso siempre que no haya que trabajar con el indice 
-		* o los indices de un array */
+		}
+		/*
+		 * SENTENCIA FOR MEJORADA.
+		 * 
+		 * Se recomienda su uso siempre que no haya que trabajar con el indice o los
+		 * indices de un array
+		 */
 
 		System.out.println("----- SENTENCIA FOR MEJORADA (Mal llamada forEach) ---------------");
 		for (long numeroEntero : numerosEnteros) {
 			System.out.println(numeroEntero);
-			}
-		/*Ejercicio ·2.
-		 * Recorrer el array numerosEnteros y solamente mostrar aquellos elementos que son
-		 * de indice par
+		}
+		/*
+		 * Ejercicio ·2. Recorrer el array numerosEnteros y solamente mostrar aquellos
+		 * elementos que son de indice par
 		 * 
-		 * ¿Cuando un valor es par?
-		 * Cuando el resultado del residuo de la division por 2 es igual a cero.
-		 * El residuo de la division la da el operador %, o tambien mod en una calculadora*/
-		
-		//Solucion utilizando la sentencia for clasica
+		 * ¿Cuando un valor es par? Cuando el resultado del residuo de la division por 2
+		 * es igual a cero. El residuo de la division la da el operador %, o tambien mod
+		 * en una calculadora
+		 */
+
+		// Solucion utilizando la sentencia for clasica
 		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
 			if (i % 2 == 0) {
-				System.out.println("indice: "+ i +",numero: " + numerosEnteros[i]);
+				System.out.println("indice: " + i + ",numero: " + numerosEnteros[i]);
 			}
 		}
-		/*Ejercicio ·3. 
-		 * Recorrer el array numerosEnteros y solamente mostrar aquellos elementos impares*/
-		
+		/*
+		 * Ejercicio ·3. Recorrer el array numerosEnteros y solamente mostrar aquellos
+		 * elementos impares
+		 */
+
 		System.out.println("----- Ejercicio 3 -----");
-		
+
 		for (long n : numerosEnteros) {
-			
+
 			if (n % 2 != 0) {
 				System.out.println(n);
 			}
 		}
-		/*Ejercicio 4, recorrer el array de numeros enteros y mostrar solamente los que sean de indice impar*/
+		/*
+		 * Ejercicio 4, recorrer el array de numeros enteros y mostrar solamente los que
+		 * sean de indice impar
+		 */
 		System.out.println("----- Ejercicio 4 -----");
-		
+
 		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
-			
+
 			if (i % 2 != 0) {
 				System.out.println("indice:" + i + ", numero " + numerosEnteros[i]);
 			}
 		}
+
+		/* SENTENCIAS DE ASIGNACION COMPUESTA */
+
+		/*
+		 * Primero: En Java existen dos tipos de datos , los tipos de datos primitivos
+		 * cuyo nombre es todo letras minusculas, como por ejemplo int, long, byte,
+		 * short, boolean, double, float y por otra parte NO TIENEN PROPIEDADES ni
+		 * metodos ¿Como lo sabençmos? Porque le aplicamos el operador punto (.) a
+		 * continuacion y no se muestra nada
+		 */
+
+		int e = 20;
+		// e. //no se muestra nada porque el tipo de dato int es un tipo de dato
+		// primitivo y no tiene propiedades ni metodos
+
+		/*
+		 * Segundo: Existen los tipos de datos no primitivos, que son aquellos cuyo
+		 * nombre comienza con mayuscula, como por ejemplo String, BigDecimal, Manzana,
+		 * etc. Estos tipos de datos no primitivos SI TIENEN propiedades y metodos
+		 */
+
+		Integer e2 = 200;
+
+		/* Existe una excepcion y es que el tipo datos String no tiene primitivo */
+
+		// Tamaño fijo
+		String[] nombres3 = { "Elida", "Jakelin", "Juan Carlos", "Miguel" };
+
+		// A continuacion array que no es de tamaño fijo
+		String[] nombres4 = new String[100];
+
+		// Ejemplo: Recorrer el array nombres3 y mostrar solamente los nombres que
+		// tengan
+		// mas de 5 caracteres
+		for (String nombre : nombres3) {
+			if (nombre.length() > 5) {
+				System.out.println(nombre);
+			}
+
+		}
+		/*
+		 * Tercero: Existen las sentencias de asignacion compuestas, que son aquellas
+		 * que permiten modificar el valor de una variable utilizando un operador de
+		 * asignacion compuesto, como por ejemplo +=, -=, *=, /=, %=, etc.
+		 */
+
+		/*
+		 * COMENTARIO MUY IMPORTANTE Simpre que sea posible las variables se deben
+		 * declarar de un tipo de datos primitivo, porque de esta manera el lenguaje no
+		 * tiene que hacer ninguna conversion implicita o explicita.
+		 * 
+		 * El tipo de datos objeto, la contraparte del primitivo, realmente NO existe,
+		 * el tipo objeto es un envoltorio del tipo primitivo
+		 */
+		byte v1 = 20;
+		short v2 = 30;
+
+		// v2 = (short) (v2 + v1);
+
+		// El resultado de la suma es un int, por lo tanto se necesita hacer un casteo
+		// explicito a short;
+
+		v2 += v1; // v2 = v2 + v1
+		// El operador de asignacion compuesto hace un casteo implicito a short,
+		// por lo tanto no es necesario hacer un casteo explicito
+		/*
+		 * Lo anterior es un ejemplo de la potencia de las sentencias de asignacion
+		 * compuesyas De no utiliuzae una sentencia de asignacion compursta en el
+		 * ejem`ñp anterior, yemdriamos que terminar haciendo un type casting (casteo en
+		 * castellano) que significa obligar a convertir a un tipo de datos concreto,
+		 * que debe evitarse en la medida de lo posible.
+		 * 
+		 * Concretamente en la operacion anterior, los operandos v1 y v2 se convierten
+		 * al tipo int y el resultado se obtiene como un int tambien y no se puede
+		 * almacenar en la variable v2 a no ser que se realice un casteo a tipo short
+		 * 
+		 * Todo lo anterior lo realiza la sentencia de asignacion compuesta
+		 */
+		/*
+		 * Conceptos de Contador y Acumulador, implementados a traves del uso de las
+		 * sentencias de asignacion compuestas
+		 * 
+		 * A modo de ejemplo ·1 : vamos a recorrer el array de manzanas y calcularel
+		 * peso promediode todas las manzanas
+		 * 
+		 * A modo de ejemplo# 2: Recorrer el array de manzanas y mostrar solamente las
+		 * manzanas cuyo peso sea superior al promedio, de color verde, de tamaño (size)
+		 * superior a 5, y de sabor dulce
+		 */
+
+		/* Solucion al ejemplo · 1 */
+		// Contador para llevar la cuenta de la cantidad de manzanas a las cuales se les
+		// ha sumado el peso, para luego poder hacer el calculo del promedio
+
+		int counter = 0;
+		// Acumulador para ir sumando el peso de cada manzana, para luego poder hacer el
+		// calculo del promedio
+		double acumuladorPeso = 0.0; // Sumatoria del peso de las manzanas
+
+		// ¿sentencia for clasica o mejorada? Rta Mejorada, porque no se pide nada
+		// respecto al indice del array de manzanas
+		for (Manzana m : manzanas) {
+
+			// Incrementando el contador en 1 por cada manzana que se recorre
+			++counter; // counter = counter + 1; //counter += 1;
+			acumuladorPeso += m.getPeso(); // acumuladorPeso = acumuladorPeso + manzana.getPeso();
+
+		}
+		// Fuera del bucle, se calcula el peso promedio dividiendo la sumatoria
+		// del peso de las manzanas entre la cantidad de manzanas
+		double pesoPromedio = acumuladorPeso / counter;
+
+		// Imprimir en la consola el peso promedio de las manzanas
+		System.out.println("El peso promedio de las manzanas es: " + pesoPromedio);
+
+		/*
+		 * Solucion al ejemplo · 2. Utilizacion del operador logico relacional && que en
+		 * otros lenguajes de programacion seria el operador AND e implica que tienen
+		 * que ser verdaderas las condiciones a la izquierda y a la derecha del operador
+		 * para que la condicion completa, al evaluar la expresion sea verdadera.
+		 * 
+		 * Se le llama tambien al operador && de corto-circuito, porque la primetra
+		 * condicion que encuentre que es falsa ya no continua evaluando la restante
+		 */
+		for (Manzana man : manzanas) {
+			if (man.getPeso() > pesoPromedio && man.getColor().toLowerCase().equals("verde") && man.getSize() > 5
+					&& man.getSabor().toLowerCase().equals("dulce")) {
+				System.out.println(man.toString());
+
+			}
+
+		}
+		/* Demostracion de que el operador logico && es de corto-circuito */
+
+		BigDecimal precio = new BigDecimal(0.80);
+		System.out.println("Precio original: " + precio);
+
+		for (Manzana man1 : manzanas) {
+
+			if (man1.getPeso() > pesoPromedio && man1.getColor().toLowerCase().equals("verde") && man1.getSize() > 7
+					&& man1.getPrecio().equals(precio = new BigDecimal(2.00))
+					&& man1.getSabor().toLowerCase().equals("dulce")) {
+				System.out.println(man1.toString());
+			}
+			System.out.println("Precio modificado ????" + precio);
+			/*
+			 * En el ejemplo anterior, el precio no se ha modificado porque la primera
+			 * condicion que se ha evaluado es falsa, por lo tanto el operador logico && no
+			 * ha continuado evaluando las restantes condiciones, y por lo tanto el precio
+			 * no se ha modificado
+			 */
 		}
 	}
-			  
-		
-			
-		
-		
-		
-
-
-	
-
+}
